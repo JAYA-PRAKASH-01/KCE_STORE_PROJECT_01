@@ -1,0 +1,221 @@
+/* About.css - Advanced Dark/Green Theme */
+
+/* Wrapper spacing from fixed navbar */
+.about-wrapper {
+  padding-top: calc(var(--nav-height) + 2rem);
+  padding-bottom: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg); /* Use dark background */
+}
+
+/* Hero Section */
+.about-hero {
+  padding: 3rem 1rem;
+  text-align: center;
+  /* Updated gradient for dark theme */
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.08), rgba(102, 252, 241, 0.02)); 
+  border-radius: 18px;
+  margin: 0 1rem 2rem;
+  /* Dark mode shadow with green glow */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(102, 252, 241, 0.1); 
+}
+.about-title {
+  font-size: 2.2rem;
+  color: var(--accent); /* Cyber Green */
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+.about-sub {
+  color: var(--muted); /* Muted light gray */
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Call to action buttons */
+.cta-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.btn-primary {
+  background: var(--accent); /* Cyber Green */
+  color: var(--bg); /* Dark text for contrast on bright green */
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: var(--hover-bg); /* Darker green */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 252, 241, 0.3);
+}
+.btn-ghost {
+  background: transparent;
+  border: 2px solid var(--accent); /* Cyber Green border */
+  color: var(--accent); /* Cyber Green text */
+  padding: 0.6rem 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.btn-ghost:hover {
+  background: var(--accent); /* Cyber Green background */
+  color: var(--bg); /* Dark text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 252, 241, 0.3);
+}
+
+/* Mission Section */
+.about-mission {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.about-mission h2 {
+  color: var(--accent); /* Cyber Green */
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.about-mission p {
+  color: var(--muted); /* Muted light gray */
+  font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.stats {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+.stat {
+  background: var(--card-bg); /* Dark card background */
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  min-width: 120px;
+  /* Dark mode shadow */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 252, 241, 0.2); /* Subtle green glow on hover */
+}
+.stat-value {
+  color: var(--accent); /* Cyber Green */
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+.stat-label {
+  color: var(--muted); /* Muted light gray */
+  font-size: 0.9rem;
+}
+
+/* Team Section */
+.about-team {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem; /* Increased gap */
+  margin-top: 1.5rem; /* Increased margin */
+}
+.team-card {
+  text-align: center;
+  background: var(--card-bg); /* Dark card background */
+  padding: 1.5rem 1.2rem; /* Increased padding */
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Dark mode shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 252, 241, 0.2); /* Subtle green glow */
+}
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Updated gradient for dark theme */
+  background: linear-gradient(135deg, rgba(102, 252, 241, 0.2), rgba(102, 252, 241, 0.08)); 
+  color: var(--accent); /* Cyber Green */
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  border: 2px solid var(--accent); /* Accent border */
+}
+.team-card h4 {
+    color: var(--text-color); /* General light text */
+    margin-bottom: 0.25rem;
+}
+.team-card p {
+    color: var(--muted); /* Muted text */
+    font-size: 0.9rem;
+}
+
+/* Why Choose Us Section */
+.about-why {
+  padding: 2rem 1rem;
+}
+.about-why h2 {
+  color: var(--accent); /* Cyber Green */
+  text-align: center;
+  margin-bottom: 1.5rem; /* Increased margin */
+  font-size: 1.8rem;
+}
+.why-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem; /* Increased gap */
+  margin-top: 0.8rem;
+  max-width: 700px; /* Increased max width */
+  margin-left: auto;
+  margin-right: auto;
+}
+.why-list li {
+  background: var(--card-bg); /* Dark card background */
+  color: var(--text-color);
+  padding: 1.2rem 1.5rem; /* Increased padding */
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Dark mode shadow */
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-left: 4px solid var(--accent); /* Accent indicator */
+}
+.why-list li:hover {
+  transform: translateX(5px); /* Slide effect */
+  background: #3c4959; /* Slightly lighter dark background on hover */
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .team-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media(max-width:640px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-title {
+    font-size: 1.8rem; /* Slightly smaller for mobile */
+  }
+  .about-sub {
+    font-size: 1rem;
+  }
+  .cta-row {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}

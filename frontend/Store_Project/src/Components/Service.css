@@ -1,100 +1,121 @@
-/* Service Section */
-.service-wrapper {
-  padding: 4rem 2rem;
-  background-color: #f3f4f6;
+/* Service.css - Advanced Dark/Green Theme (Final Enhancements) */
+
+/* offset to avoid fixed navbar */
+.service-wrapper{
+    /* KEY CHANGE: Add a subtle linear gradient to the background for depth */
+    background: linear-gradient(180deg, var(--bg) 0%, #171d24 100%);
+    padding-top:calc(var(--nav-height) + 3rem); 
+    padding-bottom:0; /* KEY CHANGE: Set padding to 0 here to control footer space in .service-inner */
+    min-height: 80vh; /* Ensure the wrapper takes up space */
+}
+.service-inner{
+    max-width:var(--container);
+    margin:0 auto;
+    /* KEY CHANGE: Increase the bottom margin significantly to separate content from the footer */
+    margin-bottom: 5rem; /* Large margin for clear separation */
+    text-align:center;
+    padding:0 1.5rem; 
 }
 
-.service-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
+.service-heading{
+    font-size:2.4rem; 
+    color:var(--accent); 
+    font-weight:800;
+    margin-top:1rem;
+    letter-spacing: 1px; 
+}
+.service-subtitle{
+    color:var(--muted); 
+    margin:1rem 0 3.5rem; 
+    font-size: 1.1rem;
 }
 
-.service-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1e40af;
+.service-cards{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:2rem; 
+}
+.service-card{
+    background:var(--card-bg); 
+    border-radius:18px; 
+    overflow:hidden;
+    /* Dark mode shadow */
+    box-shadow:0 12px 40px rgba(0, 0, 0, 0.4); 
+    transition:transform .3s ease,box-shadow .3s ease;
+    border: 1px solid rgba(102, 252, 241, 0.15); 
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative; /* Needed for .service-bg-title */
+}
+.service-card:hover{
+    transform:translateY(-10px); 
+    /* Stronger, more focused green glow on hover */
+    box-shadow:0 25px 50px rgba(0, 0, 0, 0.5), 0 0 25px rgba(102, 252, 241, 0.4); 
 }
 
-.service-subtitle {
-  margin-top: 0.5rem;
-  margin-bottom: 3rem;
-  font-size: 1.1rem;
-  color: #374151;
+/* * --- Background Title Styling (From previous step, included for completeness) ---
+ */
+.service-bg-title {
+    position: absolute;
+    top: 5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1; 
+    font-size: 5rem; 
+    font-weight: 900;
+    white-space: nowrap; 
+    pointer-events: none; 
+    color: var(--accent);
+    opacity: 0.08; 
+    transition: opacity 0.3s ease;
+}
+.service-card:hover .service-bg-title {
+    opacity: 0.15;
 }
 
-.service-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
+/* Image Backgrounds */
+.image1{ background-image: url('https://imgs.search.brave.com/9yCq_EsooRPFBHpDP4hi6-t9GU_mcOnjziRXbIKWquw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL2l-c0FB/ZVN3LVF0cERnR2wv/cy1sOTYwLndlYnA'); }
+.image2{ background-image: url('https://imgs.search.brave.com/l5o2TC-zRiQ2uy0oRt0_vUu0nUyYVkWaIzxSqCwLruI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wcmlu/dDRrLmNvbS93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyNS8wOS9B/Ym91dC1QcmludDRr/LTEucG5n'); }
+.image3{ background-image: url('https://imgs.search.brave.com/-CdLHUNa8cW1fGEdaooVDMBWdtCKejcQkE4BtTWUKJ8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NzFWVmNMcnItakwu/anBn'); }
+.image4{ background-image: url('https://imgs.search.brave.com/cjMaWsnb5pWRqbxZOeY67d84P2hFGfpEhzT7dStAYQ0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9oMi5h/enVyZWVkZ2UubmV0/L2ltZy9wcm9kdWN0/LzEwNDQ2MjctQi5q/cGc'); }
+
+.image1,.image2,.image3,.image4{
+    height:180px;
+    background-size:cover;
+    background-position:center;
+    width: 100%; 
 }
 
-.service-card {
-  background-color: #fff;
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 
-              0 4px 6px -2px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden;
+/* Icon and Text Styling */
+.service-icon{
+    font-size:1.8rem; 
+    color:var(--accent); 
+    margin-top:1.2rem; 
+    z-index: 5; /* Ensure icons are above the background text */
 }
-
-.service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 20px -5px rgba(0,0,0,0.15);
+.service-title{
+    font-size:1.35rem; 
+    font-weight:800;
+    margin:0.7rem 0 0.5rem;
+    color: var(--text-color);
+    z-index: 5; /* Ensure titles are above the background text */
 }
-
-/* Background images as card banners */
-.image1, .image2, .image3, .image4 {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
-  border-radius: 1rem 1rem 0 0;
-}
-
-/* Assigning images */
-.image1 {
-  background-image: url("https://img.freepik.com/premium-vector/professional-office-copier-multifunction-printer-printing-paper-documents-isolated-vector-illustration-printer-copier-machine-office-work_53562-6147.jpg");
-}
-.image2 {
-  background-image: url("https://img.freepik.com/premium-photo/professional-color-printer-banner-with-copy-space-high-quality-printing-services_698249-10638.jpg");
-}
-.image3 {
-  background-image: url("https://media.istockphoto.com/id/471137925/photo/laserprint-machine-printing-documents.jpg?s=612x612&w=0&k=20&c=MWfKaQDjf64UJiYYXKSztVI5CexhL_nR6QGOjp2oXfk=");
-}
-.image4 {
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXD_eBDi2IQ166rzA3qAqWcueSj94cVuxKcg&s");
-}
-
-.service-icon {
-  font-size: 2rem;
-  color: #1e40af;
-  margin-top: 1rem;
-}
-
-.service-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin: 1rem 0 0.5rem;
-}
-
-.service-desc {
-  font-size: 1rem;
-  color: #4b5563;
-  padding: 0 1rem 1.5rem;
+.service-desc{
+    color:var(--muted); 
+    padding:0 1.5rem 1.8rem; 
+    font-size:1rem;
+    line-height: 1.5; 
+    z-index: 5; /* Ensure descriptions are above the background text */
 }
 
 /* Responsive */
-@media (min-width: 768px) {
-  .service-cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
+@media(min-width:760px){.service-cards{grid-template-columns:repeat(2,1fr); gap: 1.5rem;}} 
+@media(min-width:1100px){.service-cards{grid-template-columns:repeat(4,1fr); gap: 2rem;}} 
+@media(max-width:1100px) {
+    .service-bg-title { font-size: 4rem; top: 15px; }
 }
-
-@media (min-width: 1024px) {
-  .service-cards {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
+@media(max-width:640px) {
+    .service-bg-title { font-size: 3rem; top: 20px; }
 }

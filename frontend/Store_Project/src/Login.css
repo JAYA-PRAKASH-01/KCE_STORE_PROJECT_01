@@ -1,112 +1,128 @@
-/* ===== Login Page ===== */
+/* ===== Login Page - Cyber Green Theme ===== */
 .login-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #74ebd5, #9face6);
-  font-family: "Poppins", sans-serif;
+ display: flex;
+ flex-direction: column;
+ min-height: 100vh;
+ /* Dark background with a subtle gradient matching the theme */
+ background: linear-gradient(135deg, #1f2833, #2a3442);
+ font-family: "Poppins", sans-serif;
 }
 
 /* ===== Centered Container ===== */
 .login-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
+ flex: 1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ padding: 40px 20px;
 }
 
 /* ===== Card ===== */
 .login-card {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  width: 360px;
-  text-align: center;
-  animation: fadeIn 0.5s ease-in-out;
+ /* Dark card background */
+ background: #2a3442;
+ padding: 40px 30px;
+ border-radius: 12px;
+/* Darker shadow with a subtle Cyber Green glow */
+ box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 0 10px rgba(102, 252, 241, 0.2);
+ width: 360px;
+ text-align: center;
+ animation: fadeIn 0.5s ease-in-out;
 }
 
 /* ===== Title & Subtitle ===== */
 .login-title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #333;
+ font-size: 24px;
+ font-weight: 600;
+ margin-bottom: 8px;
+ /* Cyber Green accent for the main title */
+ color: #66fcf1;
 }
 
 .login-subtitle {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 20px;
+ font-size: 14px;
+ /* Muted light text for subtitle */
+ color: #94a3b8;
+ margin-bottom: 20px;
 }
 
 /* ===== Form ===== */
 .login-form {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+ display: flex;
+ flex-direction: column;
+ text-align: left;
 }
 
 .login-form label {
-  font-size: 13px;
-  margin-bottom: 5px;
-  color: #555;
+ font-size: 13px;
+ margin-bottom: 5px;
+ /* Light text color for labels */
+ color: #c5c6c7;
 }
 
 .login-form input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
+ width: 100%;
+ padding: 12px;
+ margin-bottom: 15px;
+ /* Darker input background and border */ background: #1f2833;
+border: 1px solid #45a29e; /* Border matching a dark accent */
+ border-radius: 8px;
+ outline: none;
+ font-size: 14px;
+ color: #c5c6c7; /* Light text input */
+ transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-form input:focus {
-  border-color: #6a11cb;
-  box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+ /* Cyber Green border and subtle glow on focus */
+ border-color: #66fcf1;
+ box-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
 }
 
 /* ===== Button ===== */
 .login-btn {
-  width: 100%;
-  padding: 12px;
-  background: #6a11cb;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.3s ease;
+ width: 100%;
+ padding: 12px;
+ /* Cyber Green background */
+ background: #66fcf1;
+ /* Dark text for contrast */
+ color: #1f2833;
+ border: none;
+ border-radius: 8px;
+ font-size: 15px;
+ font-weight: 700;
+ cursor: pointer;
+ transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .login-btn:hover {
-  background: #2575fc;
+ /* Slightly darker hover color/shadow */
+ background: #45a29e;
+ transform: translateY(-2px);
+ box-shadow: 0 4px 15px rgba(102, 252, 241, 0.4);
 }
 
 /* ===== Footer Text ===== */
 .login-footer {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #444;
+margin-top: 15px;
+ font-size: 14px;
+ /* Light text color */
+ color: #c5c6c7;
 }
 
 .login-footer a {
-  color: #6a11cb;
-  text-decoration: none;
-  font-weight: 500;
+ /* Cyber Green link color */
+ color: #66fcf1;
+ text-decoration: none;
+ font-weight: 500;
 }
 
 .login-footer a:hover {
-  text-decoration: underline;
+ text-decoration: underline;
 }
 
-/* ===== Animation ===== */
+/* ===== Animation (remains the same) ===== */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
+ from { opacity: 0; transform: translateY(15px); }
+ to { opacity: 1; transform: translateY(0); }
 }

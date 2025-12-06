@@ -1,79 +1,96 @@
-/* ===== Signup Page ===== */
+/* ===== Signup Page - Cyber Green Theme ===== */
 .signup-page {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #74ebd5, #9face6);
-  font-family: "Poppins", sans-serif;
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ /* KEY CHANGE: Dark background with a subtle gradient matching the theme */
+ background: linear-gradient(135deg, #1f2833, #2a3442);
+ font-family: "Poppins", sans-serif;
 }
 
-/* ===== Signup Box ===== */
+/* ===== Signup Box (Card) ===== */
 .signup-box {
-  background: #fff;
-  padding: 40px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  text-align: center;
+ /* KEY CHANGE: Dark card background */
+ background: #2a3442;
+ padding: 40px 30px;
+ border-radius: 12px;
+/* KEY CHANGE: Darker shadow with a subtle Cyber Green glow */
+ box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(102, 252, 241, 0.2);
+ width: 350px;
+ text-align: center;
 }
 
 /* ===== Heading ===== */
 .signup-box h2 {
-  margin-bottom: 20px;
-  color: #333;
-  font-size: 22px;
-  font-weight: 600;
+ margin-bottom: 20px;
+ /* KEY CHANGE: Cyber Green accent for the title */
+ color: #66fcf1;
+ font-size: 22px;
+ font-weight: 600;
 }
 
 /* ===== Inputs ===== */
 .signup-box input {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  outline: none;
-  font-size: 14px;
-  transition: 0.3s ease;
+ width: 100%;
+ padding: 12px;
+ margin: 10px 0;
+ /* KEY CHANGE: Darker input background and border */
+ background: #1f2833;
+ border: 1px solid #45a29e; 
+ border-radius: 8px;
+ outline: none;
+ font-size: 14px;
+ /* KEY CHANGE: Light text input color */
+ color: #c5c6c7; 
+ transition: 0.3s ease;
 }
 
 .signup-box input:focus {
-  border-color: #6a11cb;
-  box-shadow: 0 0 5px rgba(106, 17, 203, 0.4);
+ /* KEY CHANGE: Cyber Green border and subtle glow on focus */
+ border-color: #66fcf1;
+ box-shadow: 0 0 8px rgba(102, 252, 241, 0.6);
 }
 
 /* ===== Button ===== */
 .signup-box button {
-  width: 100%;
-  padding: 12px;
-  margin-top: 15px;
-  background: #6a11cb;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-  transition: 0.3s ease;
+ width: 100%;
+ padding: 12px;
+ margin-top: 15px;
+ /* KEY CHANGE: Cyber Green background */
+ background: #66fcf1;
+ /* KEY CHANGE: Dark text for contrast */
+ color: #1f2833;
+ border: none;
+ border-radius: 8px;
+ font-size: 15px;
+ font-weight: 700;
+ cursor: pointer;
+ transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .signup-box button:hover {
-  background: #2575fc;
+ /* KEY CHANGE: Slightly darker hover color/shadow */
+background: #45a29e;
+transform: translateY(-2px);
+ box-shadow: 0 4px 15px rgba(102, 252, 241, 0.4);
 }
 
 /* ===== Text & Link ===== */
 .signup-box p {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #333;
+ margin-top: 15px;
+ font-size: 14px;
+ /* KEY CHANGE: Light text color */
+ color: #c5c6c7;
 }
 
 .signup-box a {
-  color: #6a11cb;
-  text-decoration: none;
-  font-weight: 500;
+ /* KEY CHANGE: Cyber Green link color */
+ color: #66fcf1;
+ text-decoration: none;
+ font-weight: 500;
 }
 
 .signup-box a:hover {
-  text-decoration: underline;
+text-decoration: underline;
 }

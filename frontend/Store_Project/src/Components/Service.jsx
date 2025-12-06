@@ -1,7 +1,8 @@
 import React from "react";
-import './Service.css';
+import "./Service.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import "./variables.css";
 
 export default function Service() {
   return (
@@ -22,6 +23,7 @@ export default function Service() {
               Quick and high-quality photocopying for all your documents.
             </p>
           </div>
+
           <div className="service-card">
             <div className="image2"></div>
             <i className="fas fa-file-pdf service-icon"></i>
@@ -30,6 +32,7 @@ export default function Service() {
               Color and black & white printing for personal and professional use.
             </p>
           </div>
+
           <div className="service-card">
             <div className="image3"></div>
             <i className="fas fa-laptop service-icon"></i>
@@ -39,7 +42,6 @@ export default function Service() {
             </p>
           </div>
 
-         
           <div className="service-card">
             <div className="image4"></div>
             <i className="fas fa-book service-icon"></i>

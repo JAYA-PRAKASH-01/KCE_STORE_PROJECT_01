@@ -1,67 +1,135 @@
-/* Navbar */
+/* Navbar.css - Advanced Green Theme */
+
 .main-navbar {
-     /* Keeps navbar fixed at top */
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    padding: 1rem 2rem;
-    border-radius: 0 0 20px 20px; /* Rounded bottom corners only */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    z-index: 1000; /* Keeps navbar above other content */
+  width: 100%;
+  /* Use the dark background */
+  background-color: var(--bg);
+  /* Lighter, subtle shadow for dark mode */
+  box-shadow: 0 1px 10px rgba(102, 252, 241, 0.2); 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Navbar inner container */
-.main-navbar .navbar-inner {
-    display: flex;
-    align-items: center;  /* Corrected from 'end' to 'center' */
-    justify-content: space-between;
+.navbar-inner {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* Logo */
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+}
+
 .logo-img {
-    height: 2.5rem;
+  height: 50px;
+  transition: transform 0.3s ease;
+  /* Optional: Add a slight filter to make the logo look integrated */
+  filter: drop-shadow(0 0 5px var(--accent)); 
 }
 
-/* Navigation links container */
+.logo-img:hover {
+  transform: scale(1.05);
+}
+
 .navigation-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Increased gap for cleaner look */
 }
 
-/* List of links */
 .links-list {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 30px;
 }
 
-.links-list a {
-    font-weight: 600;
-    color: #374151;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.links-list a,
+.links-list .link-btn {
+  text-decoration: none;
+  /* Navigation Link Color: Light Text */
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 0; /* Padding changed to 0 for underline effect */
+  border-radius: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 15px; /* Slightly larger text */
+  /* Advanced Link Effect: Underline */
+  position: relative;
 }
 
-.links-list a:hover {
-    color: #1e40af;
+/* Modern Underline Hover Effect */
+.links-list a::after,
+.links-list .link-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent); /* Electric Green underline */
+  transition: width 0.3s ease-out;
 }
 
-/* Login button */
+.links-list a:hover,
+.links-list .link-btn:hover {
+  /* Hover Text Color: Electric Green */
+  color: var(--accent);
+  background-color: transparent; /* Keep background clean */
+}
+
+.links-list a:hover::after,
+.links-list .link-btn:hover::after {
+  width: 100%; /* Line expands on hover */
+}
+
 .login-button {
-    border: 2px solid #1e40af;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    font-weight: 600;
-    color: #1e40af;
-    background-color: transparent;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  /* Button Background: Primary Accent (Electric Green) */
+  background-color: var(--accent);
+  /* Button Text: Dark text for high contrast on bright green */
+  color: #1f2833;
+  padding: 8px 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 4px; /* Sharper corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .login-button:hover {
-    background-color: #1e40af;
-    color: #fff;
-    transform: translateY(-2px);
+  /* Subtle glow/shadow on hover */
+  background-color: var(--hover-bg);
+  box-shadow: 0 0 15px var(--accent);
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- Responsive Navbar --- */
+@media (max-width: 768px) {
+  .navbar-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .links-list {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .navigation-links {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

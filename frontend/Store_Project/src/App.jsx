@@ -4,14 +4,17 @@ import Login from './Login';
 import FolderUpload from './FolderUpload';
 import View from './View';
 import Home from './Home';
+import About from './Components/About';
 import Service from './Components/Service';
 import Dashboard from './Dashboard'
+
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About></About>}/>
         <Route path="/service" element={<Service />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

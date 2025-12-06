@@ -1,0 +1,28 @@
+/* variables.css - Advanced Dark/Cyber Green Theme */
+:root {
+  /* Main Background: Dark charcoal/near-black for a modern, advanced feel */
+  --bg: #1f2833; 
+  /* Primary Accent Color: A vibrant, electric green (Cyber Green) */
+  --accent: #66fcf1; 
+  /* Secondary/Hover Background Color: A dark gray for contrast */
+  --hover-bg: #45a29e; 
+  /* Text Color (General): Light gray/white for contrast on dark background */
+  --text-color: #c5c6c7;
+  /* Muted Text Color (for descriptions): Slightly darker light gray */
+  --muted: #94a3b8; 
+  /* Card Background: Slightly lighter dark color for sectioning */
+  --card-bg: #2a3442;
+  /* Fixed height for the Navbar */
+  --nav-height: 70px;
+  /* Max width for containers */
+  --container: 1200px;
+}
+
+/* global reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body,#root{height:100%}
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  background:var(--bg); 
+  color:var(--text-color);
+}
