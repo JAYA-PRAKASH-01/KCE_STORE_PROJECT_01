@@ -1,0 +1,100 @@
+/* Service Section */
+.service-wrapper {
+  padding: 4rem 2rem;
+  background-color: #f3f4f6;
+}
+
+.service-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.service-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  color: #374151;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 
+              0 4px 6px -2px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 20px -5px rgba(0,0,0,0.15);
+}
+
+/* Background images as card banners */
+.image1, .image2, .image3, .image4 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  border-radius: 1rem 1rem 0 0;
+}
+
+/* Assigning images */
+.image1 {
+  background-image: url("https://img.freepik.com/premium-vector/professional-office-copier-multifunction-printer-printing-paper-documents-isolated-vector-illustration-printer-copier-machine-office-work_53562-6147.jpg");
+}
+.image2 {
+  background-image: url("https://img.freepik.com/premium-photo/professional-color-printer-banner-with-copy-space-high-quality-printing-services_698249-10638.jpg");
+}
+.image3 {
+  background-image: url("https://media.istockphoto.com/id/471137925/photo/laserprint-machine-printing-documents.jpg?s=612x612&w=0&k=20&c=MWfKaQDjf64UJiYYXKSztVI5CexhL_nR6QGOjp2oXfk=");
+}
+.image4 {
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXD_eBDi2IQ166rzA3qAqWcueSj94cVuxKcg&s");
+}
+
+.service-icon {
+  font-size: 2rem;
+  color: #1e40af;
+  margin-top: 1rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem;
+}
+
+.service-desc {
+  font-size: 1rem;
+  color: #4b5563;
+  padding: 0 1rem 1.5rem;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .service-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .service-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,67 @@
+/* Navbar */
+.main-navbar {
+     /* Keeps navbar fixed at top */
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 0 0 20px 20px; /* Rounded bottom corners only */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 1000; /* Keeps navbar above other content */
+}
+
+/* Navbar inner container */
+.main-navbar .navbar-inner {
+    display: flex;
+    align-items: center;  /* Corrected from 'end' to 'center' */
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo-img {
+    height: 2.5rem;
+}
+
+/* Navigation links container */
+.navigation-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* List of links */
+.links-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.links-list a {
+    font-weight: 600;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links-list a:hover {
+    color: #1e40af;
+}
+
+/* Login button */
+.login-button {
+    border: 2px solid #1e40af;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    color: #1e40af;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #1e40af;
+    color: #fff;
+    transform: translateY(-2px);
+}

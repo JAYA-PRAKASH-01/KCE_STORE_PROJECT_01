@@ -1,0 +1,88 @@
+/* ===== View Page ===== */
+.view-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* light blue gradient */
+  font-family: "Poppins", sans-serif;
+  padding: 20px;
+}
+
+/* ===== View Box ===== */
+.view-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* ===== Heading ===== */
+.view-box h3 {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* ===== Button ===== */
+.view-box button {
+  background: #0072ff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.view-box button:hover {
+  background: #0056cc;
+}
+
+/* ===== Table Container ===== */
+.table-container {
+  overflow-x: auto;
+  margin-top: 15px;
+}
+
+/* ===== Table ===== */
+.view-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.view-table th,
+.view-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.view-table th {
+  background: #0072ff;
+  color: #fff;
+  font-weight: 600;
+}
+
+.view-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.view-table tr:hover {
+  background: #eef5ff;
+}
+
+/* ===== Empty Message ===== */
+.empty-msg {
+  color: #777;
+  margin-top: 20px;
+  font-size: 18px;
+}
