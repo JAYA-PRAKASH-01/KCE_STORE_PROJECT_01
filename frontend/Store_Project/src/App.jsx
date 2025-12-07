@@ -6,21 +6,20 @@ import View from './View';
 import Home from './Home';
 import About from './Components/About';
 import Service from './Components/Service';
-import Dashboard from './Dashboard'
-
+import AdminDashboard from './AdminDashboard';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About></About>}/>
+        <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/folderupload" element={<FolderUpload />} />
         <Route path="/view" element={<View />} />
-        <Route path="/dashboard" element={<Dashboard/>}/>
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </Router>
   );

@@ -1,32 +1,29 @@
-const express=require("express");
-const mongoose=require("mongoose");
-const cors=require("cors");
-const parser=require("body-parser")
-const dotenv=require("dotenv")
-const multer=require("multer")
-const path=require("path")
-const router=require("./Router/StoreRouter")
-dotenv.config();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+require("dotenv").config();
+const path = require("path");
 
-const app=express(); 
-app.use(cors({ origin: "http://localhost:5173" }));
-app.use(parser.json());
- 
-app.use("/store",router)
+const StoreRouter = require("./Router/StoreRouter");
 
+const app = express();
+app.use(express.json());
+app.use(cors());
 
+// serve uploaded files statically (optional)
+app.use("/uploads", express.static(path.join(__dirname, "Uploads")));
 
-app.use("/Uploads",express.static(path.join(__dirname,"Uploads")))
- 
+// MongoDB connect
+mongoose.connect(process.env.MONGO_URL, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+  .then(() => console.log("MongoDB Connected"))
+  .catch(err => console.error("MongoDB connection error:", err));
 
-const port=process.env.PORT; 
-const mongo=process.env.MONGO_URL;
-mongoose.connect(mongo) 
-.then(()=>console.log("Mongodb Connected")
-).catch((err)=>console.log(err)
-) 
-app.listen(port,()=>{
-    console.log("server started at ",port); 
-})  
+app.use("/store", StoreRouter);
 
-
+const PORT = process.env.PORT || 5004;
+app.listen(PORT, () => {
+  console.log("Server started at", PORT);
+});

@@ -1,11 +1,10 @@
-const mongoose=require("mongoose")
+const mongoose = require("mongoose");
 
-const dataSchema=mongoose.Schema({
-    name:String,
-      rollno: String,
-    email:String,
-    password:String
-})
+const dataSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  rollno: { type: String, required: true, unique: true },
+  email: { type: String },
+  password: { type: String }
+}, { timestamps: true });
 
-const Signup=mongoose.model("Signupdata",dataSchema);
-module.exports=Signup;
+module.exports = mongoose.model("Signupdata", dataSchema);

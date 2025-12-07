@@ -1,14 +1,12 @@
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
 
-dotenv.config();
-
-const generateToken = (user) => {
-  return jwt.sign(
-    { id: user._id, rollno: user.rollno }, 
-    process.env.JWT_SECRET,
-    { expiresIn: "1h" } 
-  );
+module.exports = (user) => {
+  const payload = {
+    id: user._id,
+    rollno: user.rollno,
+    name: user.name
+  };
+  const secret = process.env.JWT_SECRET || "mysecret";
+  // token valid for 7 days
+  return jwt.sign(payload, secret, { expiresIn: "7d" });
 };
-
-module.exports = generateToken;

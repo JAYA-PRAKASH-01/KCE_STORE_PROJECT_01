@@ -7,28 +7,30 @@ export default function Login() {
   const navigate = useNavigate();
 
   const [rollno, setRollno] = useState("");
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("");
 
   const login = async (e) => {
     e.preventDefault();
-    const details = { rollno, name, email, password };
-
     try {
-      const res = await axios.post("http://localhost:5004/store/login", details);
+      const res = await axios.post("http://localhost:5004/store/login", { rollno, email, password });
       const data = res.data;
 
       if (data.msg === "success") {
         localStorage.setItem("tokenkey", data.token);
         localStorage.setItem("rollno", data.rollno);
         localStorage.setItem("name", data.name);
-
         setStatus("Logged in successfully!");
-        navigate('/dashboard');
+
+        if (rollno.toLowerCase() === "a100") { // example admin check
+          navigate('/admin');    
+        } else {
+          navigate('/folderupload'); 
+        }
+
       } else if (data.msg === "invalid") {
-        setStatus("Invalid password or email.");
+        setStatus("Invalid email or password.");
       } else {
         setStatus("No user found.");
       }
@@ -42,54 +44,15 @@ export default function Login() {
     <div className="login-page">
       <div className="login-container">
         <div className="login-card">
-          <h2 className="login-title">Welcome Back</h2>
-          <p className="login-subtitle">Login to continue to your account</p>
-
+          <h2>Welcome Back</h2>
           <form onSubmit={login} className="login-form">
-            <label>Roll Number</label>
-            <input
-              type="text"
-              value={rollno}
-              onChange={(e) => setRollno(e.target.value)}
-              placeholder="Enter your Roll Number"
-              required
-            />
-
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Enter your Name"
-              required
-            />
-
-            <label>Email</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your Email"
-              required
-            />
-
-            <label>Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your Password"
-              required
-            />
-
-            <button type="submit" className="login-btn">Login</button>
-
-            {status && <p className="login-status">{status}</p>}
-
-            <p className="login-footer">
-              Don’t have an account? <Link to="/signup">Signup</Link>
-            </p>
+            <input type="text" placeholder="Roll Number" value={rollno} onChange={e => setRollno(e.target.value)} required />
+            <input type="email" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} required />
+            <input type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)} required />
+            <button type="submit">Login</button>
           </form>
+          {status && <p className="status">{status}</p>}
+          <p>Don’t have an account? <Link to="/signup">Signup</Link></p>
         </div>
       </div>
     </div>

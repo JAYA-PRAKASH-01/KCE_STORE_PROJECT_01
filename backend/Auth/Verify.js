@@ -1,32 +1,19 @@
 const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 const verifytoken = (req, res, next) => {
+  // Expect "Authorization: Bearer <token>"
+  const auth = req.headers.authorization || "";
+  const token = auth.split(" ")[1];
+  if (!token) return res.status(401).json({ msg: "No token provided" });
+
   try {
-    const authHeader = req.headers["authorization"];
-
-   
-    if (!authHeader) {
-      return res.status(401).json({ msg: "Access denied. No token provided." });
-    }
-
-   
-    const token = authHeader.split(" ")[1];
-    if (!token) {
-      return res.status(401).json({ msg: "Access denied. Invalid token format." });
-    }
-
-  
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-
-    
-    req.user = decoded;
-
+    const secret = process.env.JWT_SECRET || "mysecret";
+    const decoded = jwt.verify(token, secret);
+    req.user = decoded; // attach user payload (id, rollno, name)
     next();
   } catch (err) {
-    return res.status(401).json({ msg: "Invalid or expired token" });
+    console.error("verify token error:", err);
+    return res.status(401).json({ msg: "Invalid token" });
   }
 };
 
